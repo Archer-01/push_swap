@@ -1,0 +1,8 @@
+a.out
+push_swap
+.DS_Store
+.vscode
+.*.swp
+**/*.o
+*.dSYM
+*.a

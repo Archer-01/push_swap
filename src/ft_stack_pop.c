@@ -6,13 +6,11 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 09:13:37 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 09:48:23 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/20 11:57:43 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
-
-// TODO Protect this function on push_swap operations (SIGSEGV on empty stack)
 
 /**
  * @brief Pop integer from stack

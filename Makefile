@@ -10,9 +10,14 @@ NAME			:= push_swap
 SRCS			:= ft_stack_clear.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \
-					ft_stack_push.c
+					ft_stack_push.c \
+					ps_push.c \
+					ps_rev_rotate.c \
+					ps_rotate.c \
+					ps_swap.c
 OBJS			:= $(SRCS:.c=.o)
-HEADERS			:= ft_stack.h
+HEADERS			:= ft_stack.h \
+					push_swap_operations.h
 LIBFT			:= libft.a
 LIBFT_SRCS		:= ft_atoi.c \
 					ft_bzero.c \

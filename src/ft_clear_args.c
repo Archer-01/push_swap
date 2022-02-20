@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_clear_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 12:19:48 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 15:49:25 by hhamza           ###   ########.fr       */
+/*   Created: 2022/02/20 13:34:01 by hhamza            #+#    #+#             */
+/*   Updated: 2022/02/20 13:38:07 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_parser.h"
-#include "ft_stack.h"
-#include "libft.h"
 
-int	main(int argc, char **argv)
+/**
+ * @brief Clear argument array
+ *
+ * @param args: argument array to operate on
+ */
+void	ft_clear_args(char **args)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int	i;
 
-	if (argc == 1)
-		return (EXIT_FAILURE);
-	stack_a = ft_parser(argc, argv);
-	if (stack_a == NULL)
+	if (args == NULL)
+		return ;
+	i = 0;
+	while (args[i] != NULL)
 	{
-		ft_putendl_fd("Error", STDERR_FILENO);
-		return (EXIT_FAILURE);
+		free(args[i]);
+		++i;
 	}
-	stack_b = ft_stack_new();
-	ft_printf("Sorting...\n");
-	ft_stack_clear(&stack_a);
-	ft_stack_clear(&stack_b);
-	return (EXIT_SUCCESS);
+	free(args);
 }

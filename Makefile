@@ -7,7 +7,12 @@ LIBFT_DIR		:= $(LIBS_DIR)/libft
 
 # *********************************** Files ************************************
 NAME			:= push_swap
-SRCS			:= ft_stack_clear.c \
+SRCS			:= ft_atol.c \
+					ft_check_args.c \
+					ft_clear_args.c \
+					ft_get_args.c \
+					ft_parser.c \
+					ft_stack_clear.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \
 					ft_stack_push.c \
@@ -16,7 +21,8 @@ SRCS			:= ft_stack_clear.c \
 					ps_rotate.c \
 					ps_swap.c
 OBJS			:= $(SRCS:.c=.o)
-HEADERS			:= ft_stack.h \
+HEADERS			:= ft_parser.h \
+					ft_stack.h \
 					push_swap_operations.h
 LIBFT			:= libft.a
 LIBFT_SRCS		:= ft_atoi.c \

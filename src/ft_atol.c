@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 12:19:48 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 15:49:25 by hhamza           ###   ########.fr       */
+/*   Created: 2022/02/20 14:18:32 by hhamza            #+#    #+#             */
+/*   Updated: 2022/02/20 14:53:15 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_parser.h"
-#include "ft_stack.h"
-#include "libft.h"
 
-int	main(int argc, char **argv)
+/**
+ * @brief Convert string to long
+ *
+ * @param str: string to operate on
+ * @return long: converted long
+ */
+long	ft_atol(const char *str)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	long	num;
+	int		sign;
+	int		i;
 
-	if (argc == 1)
-		return (EXIT_FAILURE);
-	stack_a = ft_parser(argc, argv);
-	if (stack_a == NULL)
+	sign = 1;
+	num = 0;
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		ft_putendl_fd("Error", STDERR_FILENO);
-		return (EXIT_FAILURE);
+		if (str[i] == '-')
+			sign = -1;
+		++i;
 	}
-	stack_b = ft_stack_new();
-	ft_printf("Sorting...\n");
-	ft_stack_clear(&stack_a);
-	ft_stack_clear(&stack_b);
-	return (EXIT_SUCCESS);
+	while (str[i] != '\0')
+	{
+		num = (num * 10) + (str[i] - '0');
+		++i;
+	}
+	return (sign * num);
 }

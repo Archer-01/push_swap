@@ -12,7 +12,10 @@ SRCS			:= ft_atol.c \
 					ft_clear_args.c \
 					ft_get_args.c \
 					ft_parser.c \
+					ft_place_smallest_num_first.c \
 					ft_stack_clear.c \
+					ft_stack_duplicate.c \
+					ft_stack_get_num_by_index.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \
 					ft_stack_push.c \
@@ -23,6 +26,7 @@ SRCS			:= ft_atol.c \
 OBJS			:= $(SRCS:.c=.o)
 HEADERS			:= ft_parser.h \
 					ft_stack.h \
+					push_swap.h \
 					push_swap_operations.h
 LIBFT			:= libft.a
 LIBFT_SRCS		:= ft_atoi.c \

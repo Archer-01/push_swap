@@ -11,10 +11,14 @@ SRCS			:= ft_atol.c \
 					ft_check_args.c \
 					ft_clear_args.c \
 					ft_get_args.c \
+					ft_lis.c \
+					ft_lis_lengths.c \
+					ft_lis_subsequence.c \
 					ft_parser.c \
 					ft_place_smallest_num_first.c \
 					ft_stack_clear.c \
 					ft_stack_duplicate.c \
+					ft_stack_get_frame_by_index.c \
 					ft_stack_get_num_by_index.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_get_num_by_index.c                        :+:      :+:    :+:   */
+/*   ft_stack_get_frame_by_index.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 10:50:56 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/22 07:59:50 by hhamza           ###   ########.fr       */
+/*   Created: 2022/02/22 07:57:09 by hhamza            #+#    #+#             */
+/*   Updated: 2022/02/22 08:00:46 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
 
 /**
- * @brief Get stack frame content by index
+ * @brief Get stack frame by index
  *
  * @param stack: stack to operate on
- * @param index: index of frame content to retrieve
- * @return t_double_list*: frame content with appropriate index, NULL otherwise
+ * @param index: frame index to retrieve
+ * @return t_double_list*: frame with appropriate index, NULL otherwise
  */
-int	*ft_stack_get_frame_content_by_index(t_stack *stack, int index)
+t_double_list	*ft_stack_get_frame_by_index(t_stack *stack, int index)
 {
-	t_double_list	*iter;
 	int				i;
+	t_double_list	*iter;
 
 	if (index < 0 || stack == NULL || stack->size == 0)
 		return (NULL);
@@ -35,5 +35,5 @@ int	*ft_stack_get_frame_content_by_index(t_stack *stack, int index)
 	}
 	if (iter == NULL)
 		return (NULL);
-	return (iter->content);
+	return (iter);
 }

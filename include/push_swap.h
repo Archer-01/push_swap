@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:45:42 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/21 11:35:51 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/22 11:03:37 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include "libft.h"
 # include "push_swap_operations.h"
 
+// Pre-sort functions
+
 t_stack	*ft_place_smallest_num_first(t_stack *stack_a);
+int		*ft_get_lis_lengths(t_stack *tmp);
+int		ft_max_index(int *arr, size_t len);
+int		*ft_get_lis_subsequence(t_stack *tmp, int *lengths);
+int		*ft_longest_increasing_subsequence(t_stack *tmp, int *lis_length);
 
 #endif

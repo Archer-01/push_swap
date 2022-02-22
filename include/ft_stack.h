@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:17:19 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/21 11:09:41 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/22 08:01:47 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ typedef struct s_stack
 	size_t			size;
 }	t_stack;
 
-t_stack	*ft_stack_new(void);
-t_bool	ft_stack_push(t_stack **stack, int num);
-int		ft_stack_pop(t_stack *stack);
-void	ft_stack_clear(t_stack **stack);
-t_stack	*ft_stack_duplicate(t_stack *stack);
-int		*ft_stack_get_frame_content_by_index(t_stack *stack, int index);
+t_stack			*ft_stack_new(void);
+t_bool			ft_stack_push(t_stack **stack, int num);
+int				ft_stack_pop(t_stack *stack);
+void			ft_stack_clear(t_stack **stack);
+t_stack			*ft_stack_duplicate(t_stack *stack);
+int				*ft_stack_get_frame_content_by_index(t_stack *stack, int index);
+t_double_list	*ft_stack_get_frame_by_index(t_stack *stack, int index);
 
 #endif

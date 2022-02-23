@@ -16,11 +16,13 @@ SRCS			:= ft_atol.c \
 					ft_lis_subsequence.c \
 					ft_parser.c \
 					ft_place_smallest_num_first.c \
+					ft_push_to_stack_b.c \
 					ft_run.c \
 					ft_sort.c \
 					ft_stack_clear.c \
 					ft_stack_duplicate.c \
 					ft_stack_get_frame_by_index.c \
+					ft_stack_get_index_by_value.c \
 					ft_stack_get_num_by_index.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \

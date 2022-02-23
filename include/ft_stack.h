@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:17:19 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/22 08:01:47 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/22 15:51:24 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void			ft_stack_clear(t_stack **stack);
 t_stack			*ft_stack_duplicate(t_stack *stack);
 int				*ft_stack_get_frame_content_by_index(t_stack *stack, int index);
 t_double_list	*ft_stack_get_frame_by_index(t_stack *stack, int index);
+int				ft_stack_get_index_by_value(t_stack *stack, int value);
 
 #endif

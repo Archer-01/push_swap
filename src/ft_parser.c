@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 14:42:27 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 15:44:51 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/23 09:37:57 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ t_stack	*ft_parser(int argc, char **argv)
 	nums = ft_get_nums((const char **) args, args_count);
 	if (nums == NULL)
 	{
-		free(nums);
+		ft_clear_args(args);
 		return (NULL);
 	}
 	stack_a = ft_init_stack_a(nums, args_count);

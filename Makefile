@@ -24,6 +24,7 @@ SRCS			:= ft_atol.c \
 					ft_stack_get_frame_by_index.c \
 					ft_stack_get_index_by_value.c \
 					ft_stack_get_num_by_index.c \
+					ft_stack_is_sorted.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \
 					ft_stack_push.c \

@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:47:51 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/23 09:49:51 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/23 11:35:43 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ t_bool	ft_sort(t_stack *stack_a, t_stack *stack_b)
 	int	*lis;
 	int	lis_length;
 
+	if (ft_stack_is_sorted(stack_a))
+		return (TRUE);
 	lis = ft_longest_increasing_subsequence(stack_a, &lis_length);
 	if (lis == NULL)
 	{

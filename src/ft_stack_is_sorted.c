@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 11:30:37 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/23 11:34:28 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/27 12:57:27 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_bool	ft_stack_is_sorted(t_stack *stack)
 	while (iter != NULL)
 	{
 		curr_num = *((int *) iter->content);
-		if (curr_num > prev_num)
+		if (curr_num < prev_num)
 			return (FALSE);
 		prev_num = curr_num;
 		iter = iter->next;

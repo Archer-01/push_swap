@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:00:30 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/23 09:32:04 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/27 08:28:09 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_bool	ft_does_belong_to_lis(int num, int *lis, int lis_length)
 /**
  * @brief Get proper rotate operation based on number's position in the stack.
  *
- * @param stack_a: stack a to operate on
+ * @param stack_a: stack A to operate on
  * @param index: index of number on stack
  * @return t_operation: appropriate operation function (ra/rra), NULL on failure
  */
@@ -82,6 +82,15 @@ static t_bool	ft_do_rotate_operation(t_stack *stack_a, t_stack *stack_b,
 	return (TRUE);
 }
 
+/**
+ * @brief Keep LIS (Longest Increasing Subsequence) elements in stack A, and
+ * push other elements to stack B.
+ *
+ * @param stack_a: stack A
+ * @param stack_b: stack B
+ * @param lis: LIS sequence array
+ * @param lis_length: LIS length
+ */
 void	ft_push_to_stack_b(t_stack *stack_a, t_stack *stack_b, int *lis,
 	int lis_length)
 {

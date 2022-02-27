@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:21:31 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/24 13:01:54 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/27 14:20:41 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_bool	ft_is_between_curr_and_next(t_double_list *ptr, int num)
 	int	current;
 	int	next;
 
-	if (ptr == NULL)
+	if (ptr == NULL || ptr->next == NULL)
 		return (FALSE);
 	current = *((int *) ptr->content);
 	next = *((int *) ptr->next->content);
@@ -46,7 +46,7 @@ static t_bool	ft_is_between_prev_and_curr(t_double_list *ptr, int num)
 	int	previous;
 	int	current;
 
-	if (ptr == NULL)
+	if (ptr == NULL || ptr->prev == NULL)
 		return (FALSE);
 	previous = *((int *) ptr->prev->content);
 	current = *((int *) ptr->content);
@@ -66,7 +66,7 @@ static t_bool	ft_is_between_last_and_first(t_stack *stack, int num)
 	int	first;
 	int	last;
 
-	if (stack == NULL)
+	if (stack == NULL || stack->size == 0)
 		return (FALSE);
 	first = *((int *) stack->stack_ptr->content);
 	last = *((int *) stack->base_ptr->content);

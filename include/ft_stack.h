@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:17:19 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/24 11:53:35 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/27 17:45:06 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ t_double_list	*ft_stack_get_frame_by_index(t_stack *stack, int index);
 int				ft_stack_get_index_by_value(t_stack *stack, int value);
 t_bool			ft_stack_is_sorted(t_stack *stack);
 int				ft_stack_get_proper_index(t_stack *stack, int num);
+int				ft_stack_get_smallest_num_index(t_stack *stack);
 
 #endif

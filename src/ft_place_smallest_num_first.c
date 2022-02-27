@@ -6,46 +6,11 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:13:23 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/21 11:40:58 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/27 12:20:39 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
- * @brief Get smallest number index on stack
- *
- * @param stack_a: stack a to operate on
- * @return int: smallest number index, -1 on NULL or empty stack
- */
-static int	ft_get_smallest_num_index(t_stack *stack_a)
-{
-	int				smallest_index;
-	int				smallest_num;
-	int				current_num;
-	int				i;
-	t_double_list	*iter;
-
-	if (stack_a == NULL || stack_a->size == 0)
-		return (-1);
-	iter = stack_a->stack_ptr;
-	smallest_index = 0;
-	smallest_num = *((int *) iter->content);
-	i = 1;
-	iter = iter->next;
-	while (iter != NULL)
-	{
-		current_num = *((int *) iter->content);
-		if (current_num < smallest_num)
-		{
-			smallest_num = current_num;
-			smallest_index = i;
-		}
-		++i;
-		iter = iter->next;
-	}
-	return (smallest_index);
-}
 
 /**
  * @brief Create new temporary stack with smallest value at the top
@@ -91,7 +56,7 @@ t_stack	*ft_place_smallest_num_first(t_stack *stack_a)
 
 	if (stack_a == NULL || stack_a->size == 0)
 		return (NULL);
-	smallest_index = ft_get_smallest_num_index(stack_a);
+	smallest_index = ft_stack_get_smallest_num_index(stack_a);
 	if (smallest_index == -1)
 		return (NULL);
 	tmp = ft_place_nums(stack_a, smallest_index);

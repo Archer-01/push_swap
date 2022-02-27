@@ -7,16 +7,22 @@ LIBFT_DIR		:= $(LIBS_DIR)/libft
 
 # *********************************** Files ************************************
 NAME			:= push_swap
-SRCS			:= ft_atol.c \
+SRCS			:= ft_apply_move.c \
+					ft_atol.c \
+					ft_calculate_moves.c \
 					ft_check_args.c \
 					ft_clear_args.c \
+					ft_find_best_move.c \
 					ft_get_args.c \
 					ft_lis.c \
 					ft_lis_lengths.c \
 					ft_lis_subsequence.c \
+					ft_optimize_move.c \
 					ft_parser.c \
 					ft_place_smallest_num_first.c \
+					ft_push_to_stack_a.c \
 					ft_push_to_stack_b.c \
+					ft_rotate_stack_a.c \
 					ft_run.c \
 					ft_sort.c \
 					ft_stack_clear.c \
@@ -25,10 +31,12 @@ SRCS			:= ft_atol.c \
 					ft_stack_get_index_by_value.c \
 					ft_stack_get_num_by_index.c \
 					ft_stack_get_proper_index.c \
+					ft_stack_get_smallest_num_index.c \
 					ft_stack_is_sorted.c \
 					ft_stack_new.c \
 					ft_stack_pop.c \
 					ft_stack_push.c \
+					ft_utils.c \
 					ps_push.c \
 					ps_rev_rotate.c \
 					ps_rotate.c \
@@ -36,6 +44,7 @@ SRCS			:= ft_atol.c \
 OBJS			:= $(SRCS:.c=.o)
 HEADERS			:= ft_parser.h \
 					ft_stack.h \
+					ft_utils.h \
 					push_swap.h \
 					push_swap_operations.h
 LIBFT			:= libft.a

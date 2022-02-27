@@ -6,28 +6,11 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 11:19:16 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 11:33:59 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/27 17:42:09 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_operations.h"
-
-/**
- * @brief Swap two memory addresses
- *
- * @param a: first memory address to operate on
- * @param b: second memory address to operate on
- */
-static void	ft_mem_swap(void **a, void **b)
-{
-	void	*c;
-
-	if (a == NULL || b == NULL)
-		return ;
-	c = *a;
-	*a = *b;
-	*b = c;
-}
 
 /**
  * @brief Shift down all elements of stack by 1.
@@ -42,12 +25,13 @@ static void	ps_rev_rotate(t_stack *stack)
 
 	if (stack == NULL || stack->size <= 1)
 		return ;
-	ft_mem_swap((void *) &stack->stack_ptr, (void *) &stack->base_ptr);
-	tmp = stack->stack_ptr->prev;
-	stack->stack_ptr->prev = NULL;
-	stack->stack_ptr->next = stack->base_ptr;
+	tmp = stack->base_ptr->prev;
+	tmp->next = NULL;
+	stack->base_ptr->prev = NULL;
+	stack->base_ptr->next = stack->stack_ptr;
+	stack->stack_ptr->prev = stack->base_ptr;
+	stack->stack_ptr = stack->base_ptr;
 	stack->base_ptr = tmp;
-	stack->base_ptr->next = NULL;
 }
 
 /**

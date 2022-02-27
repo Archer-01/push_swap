@@ -6,3 +6,4 @@ push_swap
 **/*.o
 *.dSYM
 *.a
+test/*

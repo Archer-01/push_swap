@@ -20,12 +20,14 @@ SRCS			:= ft_apply_move.c \
 					ft_lis_subsequence.c \
 					ft_optimize_move.c \
 					ft_parser.c \
+					ft_place_smallest_first.c \
 					ft_place_smallest_num_first.c \
 					ft_push_to_stack_a.c \
 					ft_push_to_stack_b.c \
 					ft_rotate_stack_a.c \
 					ft_run.c \
 					ft_sort.c \
+					ft_sort_five_nums.c \
 					ft_sort_three_nums.c \
 					ft_stack_clear.c \
 					ft_stack_duplicate.c \

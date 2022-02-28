@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:45:42 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 13:22:38 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 13:38:17 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ void		ft_apply_moves(t_movecount moves, t_stack *stack_a, \
 	t_stack *stack_b);
 void		ft_push_to_stack_a(t_stack *stack_a, t_stack *stack_b);
 void		ft_rotate_stack_a(t_stack *stack_a, t_stack *stack_b);
+void		ft_place_smallest_first(t_stack *stack_a, t_stack *stack_b);
 t_bool		ft_sort_three_nums(t_stack *stack_a, t_stack *stack_b);
+t_bool		ft_sort_five_nums(t_stack *stack_a, t_stack *stack_b);
 t_bool		ft_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

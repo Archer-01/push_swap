@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 08:20:28 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 08:51:27 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 11:53:51 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_bool	ft_run_instructions(t_stack *stack_a, t_stack *stack_b)
 	{
 		if (ft_check_instruction(instruction) == FALSE)
 		{
-			ft_putendl_fd("KO", STDOUT_FILENO);
+			ft_putendl_fd("Error", STDOUT_FILENO);
 			free(instruction);
 			return (FALSE);
 		}

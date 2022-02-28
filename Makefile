@@ -26,6 +26,7 @@ SRCS			:= ft_apply_move.c \
 					ft_rotate_stack_a.c \
 					ft_run.c \
 					ft_sort.c \
+					ft_sort_three_nums.c \
 					ft_stack_clear.c \
 					ft_stack_duplicate.c \
 					ft_stack_get_frame_by_index.c \

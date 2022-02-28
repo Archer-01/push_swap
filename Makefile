@@ -7,6 +7,7 @@ LIBFT_DIR		:= $(LIBS_DIR)/libft
 
 # *********************************** Files ************************************
 NAME			:= push_swap
+BONUS_NAME		:= checker
 SRCS			:= ft_apply_move.c \
 					ft_atol.c \
 					ft_calculate_moves.c \
@@ -47,6 +48,15 @@ HEADERS			:= ft_parser.h \
 					ft_utils.h \
 					push_swap.h \
 					push_swap_operations.h
+BONUS_SRCS		:= ft_atol.c \
+					ft_check_args.c \
+					ft_clear_args.c \
+					ft_get_args.c \
+					ft_parser.c \
+					ft_stack_clear.c \
+					ft_stack_new.c \
+					ft_stack_push.c
+BONUS_OBJS		:= $(BONUS_SRCS:.c=.o)
 LIBFT			:= libft.a
 LIBFT_SRCS		:= ft_atoi.c \
 					ft_bzero.c \
@@ -111,6 +121,7 @@ LIBFT_SRCS		:= ft_atoi.c \
 					get_next_line.c
 LIBFT_HEADER	:= libft.h
 MAIN			:= main.c
+BONUS_MAIN		:= checker.c
 
 # ****************************** Compiler options ******************************
 CC			:= cc
@@ -129,6 +140,13 @@ $(NAME):	$(addprefix $(OBJS_DIR)/, $(OBJS)) $(LIBFT_DIR)/$(LIBFT) $(MAIN)
 	$(CC) $(CFLAGS) $(INCLUDES) $(addprefix $(OBJS_DIR)/, $(OBJS)) $(LIBS) \
 		$(MAIN) -o $(NAME)
 
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(addprefix $(OBJS_DIR)/, $(BONUS_OBJS)) $(LIBFT_DIR)/$(LIBFT) \
+				$(BONUS_MAIN)
+	$(CC) $(CFLAGS) $(INCLUDES) $(addprefix $(OBJS_DIR)/, $(BONUS_OBJS)) \
+		$(LIBS) $(BONUS_MAIN) -o $(BONUS_NAME)
+
 $(LIBFT_DIR)/$(LIBFT): $(LIBFT_DIR)/include/$(LIBFT_HEADER) \
 						$(addprefix $(LIBS_DIR)/libft/src/, $(LIBFT_SRCS))
 	make -C $(LIBFT_DIR)
@@ -144,8 +162,8 @@ clean:
 
 fclean:	clean
 	make fclean -C $(LIBFT_DIR)
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
 
 re:	fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re bonus

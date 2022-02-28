@@ -7,3 +7,4 @@ push_swap
 *.dSYM
 *.a
 test/*
+checker

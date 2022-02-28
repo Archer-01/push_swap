@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 14:42:27 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/23 09:37:57 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 17:25:52 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ t_stack	*ft_parser(int argc, char **argv)
 		|| ft_check_args((const char **) args) == FALSE)
 	{
 		ft_clear_args(args);
-		if (*args == NULL)
+		if (args != NULL && *args == NULL)
 			exit(EXIT_FAILURE);
 		return (NULL);
 	}

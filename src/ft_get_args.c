@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 11:54:28 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 13:35:43 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 17:06:09 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,11 @@ char	**ft_get_args(int argc, char **argv)
 	char	**args;
 
 	joined = ft_join_argv(argc, argv);
+	if (joined == NULL)
+		return (NULL);
 	args = ft_split(joined, ' ');
+	if (args == NULL)
+		return (NULL);
 	if (joined != NULL)
 		free(joined);
 	return (args);

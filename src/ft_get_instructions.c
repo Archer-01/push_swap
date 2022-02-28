@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 08:20:28 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 11:53:51 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 17:45:50 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ t_bool	ft_run_instructions(t_stack *stack_a, t_stack *stack_b)
 	if (stack_a == NULL || stack_b == NULL)
 		return (FALSE);
 	instruction = get_next_line(STDIN_FILENO);
+	if (instruction == NULL)
+		return (TRUE);
 	while (instruction != NULL)
 	{
 		if (ft_check_instruction(instruction) == FALSE)
@@ -98,6 +100,8 @@ t_bool	ft_run_instructions(t_stack *stack_a, t_stack *stack_b)
 		ft_run(instruction, stack_a, stack_b);
 		free(instruction);
 		instruction = get_next_line(STDIN_FILENO);
+		if (instruction == NULL)
+			break ;
 	}
 	return (TRUE);
 }

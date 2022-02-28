@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 14:22:50 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 14:38:10 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 14:55:50 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static t_bool	ft_check_number(const char *str)
 	int	i;
 
 	i = 0;
+	if (ft_strcmp(str, "+") == 0 || ft_strcmp(str, "-") == 0)
+		return (FALSE);
 	if (str[i] == '+' || str[i] == '-')
 		++i;
 	while (str[i] != '\0')

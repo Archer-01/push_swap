@@ -6,26 +6,24 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:23:59 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 08:03:50 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 09:07:48 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	ft_stack_print(t_stack *stack)
+/**
+ * @brief Clear stacks A and B
+ *
+ * @param stack_a: stack A
+ * @param stack_b: stack B
+ */
+static void	ft_clear_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	t_double_list	*iter;
-
-	ft_printf("[");
-	iter = stack->stack_ptr;
-	while (iter != NULL)
-	{
-		ft_printf("%i", *((int *) iter->content));
-		if (iter->next != NULL)
-			ft_printf(" ");
-		iter = iter->next;
-	}
-	ft_printf("]\n");
+	if (stack_a == NULL || stack_b == NULL)
+		return ;
+	ft_stack_clear(&stack_a);
+	ft_stack_clear(&stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -43,8 +41,16 @@ int	main(int argc, char **argv)
 	}
 	stack_b = ft_stack_new();
 	if (stack_b == NULL)
+	{
+		ft_stack_clear(&stack_a);
 		return (EXIT_FAILURE);
-	ft_stack_print(stack_a);
-	ft_printf("Checker is loading...\n");
-	return (0);
+	}
+	if (ft_run_instructions(stack_a, stack_b) == FALSE
+		|| ft_check_if_ok(stack_a, stack_b) == FALSE)
+	{
+		ft_clear_stacks(stack_a, stack_b);
+		return (EXIT_FAILURE);
+	}
+	ft_clear_stacks(stack_a, stack_b);
+	return (EXIT_SUCCESS);
 }

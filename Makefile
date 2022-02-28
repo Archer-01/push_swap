@@ -50,12 +50,20 @@ HEADERS			:= ft_parser.h \
 					push_swap_operations.h
 BONUS_SRCS		:= ft_atol.c \
 					ft_check_args.c \
+					ft_check_if_ok.c \
 					ft_clear_args.c \
 					ft_get_args.c \
+					ft_get_instructions.c \
 					ft_parser.c \
 					ft_stack_clear.c \
+					ft_stack_is_sorted.c \
 					ft_stack_new.c \
-					ft_stack_push.c
+					ft_stack_pop.c \
+					ft_stack_push.c \
+					ps_push.c \
+					ps_rev_rotate.c \
+					ps_rotate.c \
+					ps_swap.c
 BONUS_OBJS		:= $(BONUS_SRCS:.c=.o)
 LIBFT			:= libft.a
 LIBFT_SRCS		:= ft_atoi.c \

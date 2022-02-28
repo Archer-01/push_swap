@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_check_duplicate_nums.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 14:18:32 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 17:59:24 by hhamza           ###   ########.fr       */
+/*   Created: 2022/02/28 17:50:53 by hhamza            #+#    #+#             */
+/*   Updated: 2022/02/28 17:53:54 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_parser.h"
 
 /**
- * @brief Convert string to long
+ * @brief Check for duplicate numbers in array
  *
- * @param str: string to operate on
- * @return long: converted long
+ * @param nums: number array
+ * @param len: number array length
+ * @return t_bool: TRUE if duplicate were found, FALSE otherwise
  */
-long	ft_atol(char *str)
+t_bool	ft_check_duplicate_nums(int *nums, int len)
 {
-	long	num;
-	int		sign;
-	int		i;
+	int	i;
+	int	j;
 
-	sign = 1;
-	num = 0;
 	i = 0;
-	if (str[i] == '+' || str[i] == '-')
+	while (i < len)
 	{
-		if (str[i] == '-')
-			sign = -1;
+		j = i + 1;
+		while (j < len)
+		{
+			if (nums[i] == nums[j])
+				return (TRUE);
+			++j;
+		}
 		++i;
 	}
-	while (str[i] != '\0')
-	{
-		num = (num * 10) + (str[i] - '0');
-		++i;
-	}
-	return (sign * num);
+	return (FALSE);
 }

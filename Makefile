@@ -12,6 +12,7 @@ SRCS			:= ft_apply_move.c \
 					ft_atol.c \
 					ft_calculate_moves.c \
 					ft_check_args.c \
+					ft_check_duplicate_nums.c \
 					ft_clear_args.c \
 					ft_find_best_move.c \
 					ft_get_args.c \
@@ -53,6 +54,7 @@ HEADERS			:= ft_parser.h \
 					push_swap_operations.h
 BONUS_SRCS		:= ft_atol.c \
 					ft_check_args.c \
+					ft_check_duplicate_nums.c \
 					ft_check_if_ok.c \
 					ft_clear_args.c \
 					ft_get_args.c \

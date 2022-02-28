@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 11:47:44 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/20 14:43:33 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 17:59:16 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ void	ft_clear_args(char **args);
 
 // Argument checking
 
-long	ft_atol(const char *str);
-t_bool	ft_check_args(const char **args);
+long	ft_atol(char *str);
+t_bool	ft_check_args(char **args);
+t_bool	ft_check_duplicate_nums(int *nums, int len);
 
 // Parser
 

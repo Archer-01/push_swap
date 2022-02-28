@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 14:22:50 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 14:55:50 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 17:59:04 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param args: string array to operate on
  * @return t_bool: TRUE if duplicates were found, FALSE otherwise
  */
-static t_bool	ft_check_duplicates(const char **args)
+static t_bool	ft_check_duplicates(char **args)
 {
 	int	i;
 	int	j;
@@ -74,7 +74,7 @@ static t_bool	ft_check_number(const char *str)
  * @return t_bool: TRUE if all string array contains valid numbers,
  * FALSE otherwise
  */
-static t_bool	ft_check_numbers(const char **args)
+static t_bool	ft_check_numbers(char **args)
 {
 	int		i;
 	long	num;
@@ -99,7 +99,7 @@ static t_bool	ft_check_numbers(const char **args)
  * @param args: string array to operate on
  * @return t_bool: TRUE for valid arguments, FALSE otherwise
  */
-t_bool	ft_check_args(const char **args)
+t_bool	ft_check_args(char **args)
 {
 	return (ft_check_duplicates(args) == FALSE \
 		&& ft_check_numbers(args) == TRUE);

@@ -6,7 +6,7 @@
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 14:42:27 by hhamza            #+#    #+#             */
-/*   Updated: 2022/02/28 17:25:52 by hhamza           ###   ########.fr       */
+/*   Updated: 2022/02/28 18:15:37 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param args: string array to operate on
  * @return int: argument count
  */
-static int	ft_count_args(const char **args)
+static int	ft_count_args(char **args)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ static int	ft_count_args(const char **args)
  * @param args_count: string array argument count
  * @return int*: newly created integer array, NULL on failure
  */
-static int	*ft_get_nums(const char **args, int args_count)
+static int	*ft_get_nums(char **args, int args_count)
 {
 	int	*nums;
 	int	i;
@@ -102,23 +102,22 @@ t_stack	*ft_parser(int argc, char **argv)
 	int		*nums;
 
 	args = ft_get_args(argc, argv);
-	if (args == NULL || *args == NULL
-		|| ft_check_args((const char **) args) == FALSE)
+	if (args == NULL || *args == NULL || ft_check_args(args) == FALSE)
 	{
 		ft_clear_args(args);
 		if (args != NULL && *args == NULL)
 			exit(EXIT_FAILURE);
 		return (NULL);
 	}
-	args_count = ft_count_args((const char **) args);
-	nums = ft_get_nums((const char **) args, args_count);
-	if (nums == NULL)
+	args_count = ft_count_args(args);
+	nums = ft_get_nums(args, args_count);
+	if (nums == NULL || ft_check_duplicate_nums(nums, args_count) == TRUE)
 	{
 		ft_clear_args(args);
+		if (nums != NULL)
+			free(nums);
 		return (NULL);
 	}
 	stack_a = ft_init_stack_a(nums, args_count);
-	ft_clear_args(args);
-	free(nums);
-	return (stack_a);
+	return (ft_clear_args(args), free(nums), stack_a);
 }

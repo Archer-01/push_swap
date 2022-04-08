@@ -146,36 +146,50 @@ LIBS		:= -L $(LIBFT_DIR) -lft
 RM		:= rm -rf
 MKDIR	:= mkdir -p
 
+# *********************************** Colors ***********************************
+NC		:= '\033[0m'
+GREEN	:= '\033[32m'
+RED		:= '\033[0;31m'
+BLUE	:= '\033[0;34m'
+
 # ********************************** Targets ***********************************
 all:	$(NAME)
 
 $(NAME):	$(addprefix $(OBJS_DIR)/, $(OBJS)) $(LIBFT_DIR)/$(LIBFT) $(MAIN)
-	$(CC) $(CFLAGS) $(INCLUDES) $(addprefix $(OBJS_DIR)/, $(OBJS)) $(LIBS) \
+	@echo "Compiling" $(GREEN) $(NAME) $(NC)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(addprefix $(OBJS_DIR)/, $(OBJS)) $(LIBS) \
 		$(MAIN) -o $(NAME)
 
 bonus: $(BONUS_NAME)
 
 $(BONUS_NAME): $(addprefix $(OBJS_DIR)/, $(BONUS_OBJS)) $(LIBFT_DIR)/$(LIBFT) \
 				$(BONUS_MAIN)
-	$(CC) $(CFLAGS) $(INCLUDES) $(addprefix $(OBJS_DIR)/, $(BONUS_OBJS)) \
+	@echo "Compiling" $(GREEN) $(BONUS_NAME) $(NC)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(addprefix $(OBJS_DIR)/, $(BONUS_OBJS)) \
 		$(LIBS) $(BONUS_MAIN) -o $(BONUS_NAME)
 
 $(LIBFT_DIR)/$(LIBFT): $(LIBFT_DIR)/include/$(LIBFT_HEADER) \
 						$(addprefix $(LIBS_DIR)/libft/src/, $(LIBFT_SRCS))
-	make -C $(LIBFT_DIR)
+	@echo "Compiling" $(GREEN) $(LIBFT) $(NC)
+	@make -C $(LIBFT_DIR)
 
 $(OBJS_DIR)/%.o:	$(SRCS_DIR)/%.c $(addprefix $(INCLUDES_DIR)/, $(HEADERS)) \
 					$(LIBFT_DIR/include/$(LIBFT_HEADER)
 		@$(MKDIR) $(OBJS_DIR)
-		$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
+		@echo "Compiling" $(GREEN) $(shell basename $(basename $<)) $(NC)
+		@$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
 
 clean:
-	make clean -C $(LIBFT_DIR)
-	$(RM) $(OBJS_DIR) $(LIBFT)
+	@echo "Removing" $(RED) "libft object files" $(NC)
+	@make clean -C $(LIBFT_DIR)
+	@echo "Removing" $(RED) "Object files" $(NC)
+	@$(RM) $(OBJS_DIR)
 
 fclean:	clean
-	make fclean -C $(LIBFT_DIR)
-	$(RM) $(NAME) $(BONUS_NAME)
+	@echo "Removing" $(RED) $(LIBFT) $(NC)
+	@make fclean -C $(LIBFT_DIR)
+	@echo "Removing" $(RED) "Bonus object files" $(NC)
+	@$(RM) $(NAME) $(BONUS_NAME)
 
 re:	fclean all
 

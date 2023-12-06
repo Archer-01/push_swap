@@ -1,4 +1,3 @@
-lea
 # push_swap
 
 A sorting algorithm based on two stacks
